@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Nordeco';
+    src: url('./assets/fonts/Fontspring-DEMO-nordeco-regular.otf');
+  }
+  html {
+    font-family: Nordeco;
+    background-color: #eaf8ff;
+  }
+  .scroll {
+    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary/50 scrollbar-thumb-rounded-full dark:scrollbar-thumb-secondary/50;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
