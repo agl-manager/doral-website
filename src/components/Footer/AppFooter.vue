@@ -18,8 +18,9 @@
     <footer class="flex py-6 justify-center">
       <section class="max-w-6xl w-full flex flex-col items-center justify-center">
         <p>
-          © 2023 Doral Solutions Powered by
-          <strong><a href="https://exeditec.com/">EXEDITEC</a></strong>
+          © 2023 Doral Solutions
+          <!-- Powered by
+          <strong><a href="https://exeditec.com/">EXEDITEC</a></strong> -->
         </p>
       </section>
     </footer>

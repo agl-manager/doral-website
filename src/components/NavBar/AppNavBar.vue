@@ -1,9 +1,11 @@
 <template>
   <nav class="sticky top-0 w-full z-20">
     <AppAnimations>
-      <section v-if="displayInfo" class="p-4 bg-primary flex justify-between text-white">
-        <p><strong>Doralty</strong> digital business card now available</p>
-        <button @click="displayInfo = !displayInfo"><strong>X</strong></button>
+      <section v-if="displayInfo" class="w-full flex justify-center bg-primary">
+        <section class="p-4 flex justify-between text-white max-w-6xl w-full">
+          <p><strong>Doralty</strong> digital business card now available</p>
+          <button @click="displayInfo = !displayInfo"><strong>X</strong></button>
+        </section>
       </section>
     </AppAnimations>
     <section class="bg-white shadow backdrop-blur-[10px] w-full flex justify-center">
