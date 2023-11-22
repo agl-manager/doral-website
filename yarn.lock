@@ -1443,11 +1443,13 @@ __metadata:
     tailwind-scrollbar: "npm:^3.0.5"
     tailwindcss: "npm:^3.3.5"
     typescript: "npm:~5.2.0"
+    vee-validate: "npm:^4.11.8"
     vite: "npm:^4.4.11"
     vite-svg-loader: "npm:^4.0.0"
     vue: "npm:^3.3.4"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.19"
+    yup: "npm:^1.3.2"
   languageName: unknown
   linkType: soft
 
@@ -3229,6 +3231,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"property-expr@npm:^2.0.5":
+  version: 2.0.6
+  resolution: "property-expr@npm:2.0.6"
+  checksum: 89977f4bb230736c1876f460dd7ca9328034502fd92e738deb40516d16564b850c0bbc4e052c3df88b5b8cd58e51c93b46a94bea049a3f23f4a022c038864cab
+  languageName: node
+  linkType: hard
+
 "punycode@npm:^2.1.0":
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
@@ -3714,6 +3723,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-case@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "tiny-case@npm:1.0.3"
+  checksum: 3f7a30c39d5b0e1bc097b0b271bec14eb5b836093db034f35a0de26c14422380b50dc12bfd37498cf35b192f5df06f28a710712c87ead68872a9e37ad6f6049d
+  languageName: node
+  linkType: hard
+
 "titleize@npm:^3.0.0":
   version: 3.0.0
   resolution: "titleize@npm:3.0.0"
@@ -3734,6 +3750,13 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10dda13571e1f5ad37546827e9b6d4252d2e0bc176c24a101252153ef435d83696e2557fe128c4678e4e78f5f01e83711c703eef9814eb12dab028580d45980a
+  languageName: node
+  linkType: hard
+
+"toposort@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "toposort@npm:2.0.2"
+  checksum: 6f128353e4ed9739e49a28fb756b0a00f3752b29fc9b862ff781446598ee3b486cd229697feebc4eabd916eac5de219f3dae450c585bf13673f6b133a7226e06
   languageName: node
   linkType: hard
 
@@ -3776,6 +3799,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^2.19.0":
+  version: 2.19.0
+  resolution: "type-fest@npm:2.19.0"
+  checksum: 7bf9e8fdf34f92c8bb364c0af14ca875fac7e0183f2985498b77be129dc1b3b1ad0a6b3281580f19e48c6105c037fb966ad9934520c69c6434d17fd0af4eed78
+  languageName: node
+  linkType: hard
+
 "type-fest@npm:^3.8.0":
   version: 3.13.1
   resolution: "type-fest@npm:3.13.1"
@@ -3787,6 +3817,13 @@ __metadata:
   version: 4.7.1
   resolution: "type-fest@npm:4.7.1"
   checksum: ef21f317738080d71d8603a65bd7136e1e0246980b407e9fe6b4c35cc239b712dd737b06c391e7cde8213d8a733449930b6cc5a3417324b90dddeb84fa167629
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.3.1":
+  version: 4.8.2
+  resolution: "type-fest@npm:4.8.2"
+  checksum: 86ea9b4c2a1784af7708b837948bd0b4c22d1b1bc15d95e0366213b983e802c09a76eccd56566e91ee5b7c961238b118fd256a7a323e7d79dc302773d40c99d2
   languageName: node
   linkType: hard
 
@@ -3879,6 +3916,18 @@ __metadata:
     spdx-correct: "npm:^3.0.0"
     spdx-expression-parse: "npm:^3.0.0"
   checksum: 86242519b2538bb8aeb12330edebb61b4eb37fd35ef65220ab0b03a26c0592c1c8a7300d32da3cde5abd08d18d95e8dabfad684b5116336f6de9e6f207eec224
+  languageName: node
+  linkType: hard
+
+"vee-validate@npm:^4.11.8":
+  version: 4.11.8
+  resolution: "vee-validate@npm:4.11.8"
+  dependencies:
+    "@vue/devtools-api": "npm:^6.5.0"
+    type-fest: "npm:^4.3.1"
+  peerDependencies:
+    vue: ^3.3.4
+  checksum: b6b6254d2ad830b687eb2f7b7250ad3b65e3bac9be96f577766f79e084f8cf1790c5737d97c984e0d930ce1a76b620a06f053aba9148b2880f1b76b132937fe9
   languageName: node
   linkType: hard
 
@@ -4095,5 +4144,17 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"yup@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "yup@npm:1.3.2"
+  dependencies:
+    property-expr: "npm:^2.0.5"
+    tiny-case: "npm:^1.0.3"
+    toposort: "npm:^2.0.2"
+    type-fest: "npm:^2.19.0"
+  checksum: 68ea930cbbb159ecbfd9e6d256d237a9f0f24ca05ee8e92c0a1058eee73988f3fabcd39a05cf2eded4d394d4813206e8deb90caef610feae88abab9801d1d6af
   languageName: node
   linkType: hard

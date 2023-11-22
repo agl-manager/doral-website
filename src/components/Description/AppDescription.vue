@@ -7,15 +7,21 @@
     ></aside>
     <section class="w-full flex justify-center">
       <section class="grid md:grid-cols-2 z-10 w-full p-4 max-w-6xl md:gap-8">
-        <aside class="flex flex-col gap-8 text-white items-center my-16 justify-center">
+        <aside
+          class="flex flex-col gap-8 text-white items-center md:items-start my-16 justify-center"
+        >
           <h1 class="text-4xl md:text-3xl xl:text-6xl font-bold text-center md:text-start">
             Professional Software <br />
             Development Services
           </h1>
           <p class="text-center md:text-start md:text-xl">Software engineering and beyond</p>
-          <button class="bg-white w-min whitespace-nowrap text-primary py-2 px-4 rounded-full">
+          <a
+            href="https://forms.gle/br98A11nJEKwgMg1A"
+            target="_blank"
+            class="bg-white w-min whitespace-nowrap text-primary py-2 px-6 rounded-full"
+          >
             Start Project
-          </button>
+          </a>
         </aside>
         <section class="flex w-full items-center justify-center my-16">
           <AppIcons asset="graphics" />

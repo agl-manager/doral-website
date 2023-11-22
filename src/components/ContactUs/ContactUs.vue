@@ -21,66 +21,47 @@
             <aside><AppIcons asset="phone" /></aside>
             <section class="flex flex-col">
               <h6 class="text-lg font-semibold">Phone</h6>
-              <p>TBD</p>
+              <p>+1 (954) 840-3224</p>
             </section>
           </article>
           <article class="flex gap-4 items-center">
             <aside><AppIcons asset="location" /></aside>
             <section class="flex flex-col">
               <h6 class="text-lg font-semibold">Address</h6>
-              <p>TBD</p>
+              <p>6193 NW 183rd St, Hialeah, FL, 33017 #171672</p>
             </section>
           </article>
         </aside>
         <section class="flex w-full items-center justify-center my-16">
           <section class="bg-white rounded-[30px] shadow backdrop-blur-[10px] p-8 w-full">
-            <form @submit.prevent="() => {}" class="grid grid-cols-2 gap-4">
-              <section class="flex flex-col gap-2">
-                <label for="name" class="font-semibold">
-                  Name
-                  <span class="text-red-700">*</span>
-                </label>
-                <input
-                  required
-                  type="text"
-                  name=""
-                  id="name"
-                  class="py-2 px-4 bg-white rounded-[10px] border border-slate-200"
-                />
-              </section>
-              <section class="flex flex-col gap-2">
-                <label for="email" class="font-semibold">
-                  Email
-                  <span class="text-red-700">*</span>
-                </label>
-                <input
-                  required
-                  type="email"
-                  name=""
-                  id="email"
-                  class="py-2 px-4 bg-white rounded-[10px] border border-slate-200"
-                />
-              </section>
-              <section class="flex flex-col gap-2 col-span-2">
-                <label for="Message" class="font-semibold">
-                  Message
-                  <span class="text-red-700">*</span>
-                </label>
-                <textarea
-                  required
-                  type="text"
-                  name=""
-                  id="Message"
-                  rows="5"
-                  class="py-2 px-4 bg-white rounded-[10px] border border-slate-200"
-                />
-                <section class="col-span-2 flex justify-end pt-4">
-                  <button
-                    class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold h-min"
-                  >
-                    Contact Us
-                  </button>
-                </section>
+            <form @submit.prevent="handleSubmit" class="grid grid-cols-2 gap-4">
+              <BaseInput
+                v-model="state.name"
+                label="Name"
+                required
+                :error="submitCount ? errors.name : ''"
+              />
+              <BaseInput
+                v-model="state.email"
+                label="Email"
+                type="email"
+                required
+                :error="submitCount ? errors.email : ''"
+              />
+
+              <BaseTextArea
+                v-model="state.message"
+                class="col-span-2"
+                label="Message"
+                required
+                :error="submitCount ? errors.message : ''"
+              />
+              <section class="col-span-2 flex justify-end pt-4">
+                <button
+                  class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold h-min"
+                >
+                  Contact Us
+                </button>
               </section>
             </form>
           </section>
@@ -91,4 +72,38 @@
 </template>
 <script lang="ts" setup>
 import AppIcons from '../ui/Assets/AppIcons.vue'
+import * as yup from 'yup'
+import { useForm } from 'vee-validate'
+import BaseInput from '../ui/inputs/BaseInput.vue'
+import BaseTextArea from '../ui/inputs/BaseTextArea.vue'
+import { reactive } from 'vue'
+
+const initialState = {
+  email: '',
+  name: '',
+  message: ''
+}
+
+const state = reactive({
+  ...initialState
+})
+
+const { validate, setValues, errors, submitCount, submitForm } = useForm({
+  validationSchema: yup.object({
+    email: yup.string().email().required().label('Email'),
+    name: yup.string().required().label('Name'),
+    message: yup.string().required().min(50).label('Message')
+  })
+})
+
+const handleSubmit = async () => {
+  setValues(state)
+  const valid = await validate()
+  if (valid.valid) {
+    //
+    Object.assign(state, { ...initialState })
+  } else {
+    submitForm()
+  }
+}
 </script>

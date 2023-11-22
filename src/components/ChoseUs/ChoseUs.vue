@@ -42,11 +42,12 @@ quality assurance processes to deliver software that meets the highest standards
 specific requirements, ensuring they seamlessly integrate into your business operations."
         />
         <ChoseCard title="Assured Success " bg="bg-cyan-100" text="text-gray-700">
-          <button
+          <a
+          href="#contact_us"
             class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold"
           >
             Contact Us
-          </button>
+          </a>
         </ChoseCard>
       </section>
     </section>

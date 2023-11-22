@@ -5,14 +5,16 @@
     </aside>
     <article class="flex flex-col gap-4 items-start justify-between">
       <header class="h-12">
-        <AppIcons asset="logo_full" />
+        <AppIcons asset="doralty" />
       </header>
       <p class="max-w-sm" v-html="text"></p>
-      <button
+      <a
+        href="https://doralty.com"
+        target="_blank"
         class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold"
       >
         Learn More
-      </button>
+      </a>
     </article>
   </section>
 </template>

@@ -28,11 +28,12 @@
         <p class="text-3xl max-w-lg">
           Ready to embark on your digital journey? Let’s make it happen, together.
         </p>
-        <button
+        <a
+          href="#contact_us"
           class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold h-min"
         >
           Contact Us
-        </button>
+        </a>
       </article>
     </section>
   </div>
