@@ -7,7 +7,7 @@
       <section class="w-full flex justify-center">
         <section class="z-10 w-full p-4 max-w-6xl md:gap-8">
           <i class="w-full">
-            <img :src="getAsset('images/journey.png')" class="w-full h-auto" />
+            <img :src="getAsset('images/journey.png')" class="w-full h-auto" alt="image journey" />
           </i>
         </section>
       </section>

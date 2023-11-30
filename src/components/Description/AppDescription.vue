@@ -18,7 +18,7 @@
           <a
             href="https://forms.gle/br98A11nJEKwgMg1A"
             target="_blank"
-            class="bg-white w-min whitespace-nowrap text-primary py-2 px-6 rounded-full"
+            class="bg-white w-min whitespace-nowrap text-primary font-semibold py-2 px-6 rounded-full"
           >
             Start Project
           </a>

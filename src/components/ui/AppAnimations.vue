@@ -1,5 +1,5 @@
 <template>
-  <Transition :name="animation" mode="out-in" appear>
+  <Transition :name="animation" mode="out-in" :appear="appear">
     <slot />
   </Transition>
 </template>
@@ -19,7 +19,8 @@ defineProps({
   animation: {
     type: String as PropType<AnimationsTypes>,
     default: 'fade'
-  }
+  },
+  appear: Boolean
 })
 </script>
 <style scoped>

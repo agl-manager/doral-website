@@ -1,6 +1,8 @@
 <template>
   <aside class="w-12 block md:hidden">
-    <button type="button" @click="openModal"><AppIcons asset="h_menu" /></button>
+    <button type="button" aria-label="Menu" @click="openModal">
+      <AppIcons asset="h_menu" />
+    </button>
   </aside>
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="closeModal" class="relative z-50">

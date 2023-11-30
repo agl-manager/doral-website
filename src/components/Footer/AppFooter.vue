@@ -3,15 +3,15 @@
     <header class="flex py-6 justify-center bg-gradient-to-r from-primary to-secondary">
       <section class="max-w-6xl w-full flex flex-col items-center justify-center gap-6">
         <i class="w-24">
-          <a href="#home">
+          <a aria-label="Home" href="#home">
             <AppIcons asset="logo_white" />
           </a>
         </i>
         <ul class="flex gap-8 text-white font-semibold">
-          <li><a href="#about_us">About Us</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#contact_us">Contact</a></li>
+          <li><a aria-label="Navigate to about us" href="#about_us">About Us</a></li>
+          <li><a aria-label="Navigate to projects" href="#projects">Projects</a></li>
+          <li><a aria-label="Navigate to leadership" href="#leadership">Leadership</a></li>
+          <li><a aria-label="Navigate to contact us" href="#contact_us">Contact</a></li>
         </ul>
       </section>
     </header>

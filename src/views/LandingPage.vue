@@ -6,7 +6,9 @@
     <AppDescription id="home" />
     <DevelopmentInformation />
     <AppLogos />
-    <AboutUs id="about_us" />
+    <div id="about_us">
+      <AboutUs />
+    </div>
     <ChoseUs />
     <ProjectsCarrusel id="projects" />
     <JourneyWithUs />

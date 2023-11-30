@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Nordeco';
-    src: url('./assets/fonts/Fontspring-DEMO-nordeco-regular.otf');
-  }
   html {
-    font-family: Nordeco;
+    font-family: nordeco-regular;
     background-color: #eaf8ff;
   }
   .scroll {

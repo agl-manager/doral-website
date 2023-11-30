@@ -11,7 +11,7 @@
       </section>
       <section class="w-full p-12 border rounded-3xl">
         <main class="flex w-full justify-between items-center">
-          <button class="absolute -left-[3rem]" @click="handlePrev">
+          <button aria-label="Prev" class="absolute -left-[3rem]" @click="handlePrev">
             <svg
               width="96"
               height="96"
@@ -42,7 +42,7 @@
               <ProjectCard :text="items[selected].text" :key="selected" />
             </AppAnimations>
           </section>
-          <button class="absolute -right-[3rem]" @click="handleNext">
+          <button aria-label="Next" class="absolute -right-[3rem]" @click="handleNext">
             <svg
               width="96"
               height="96"
