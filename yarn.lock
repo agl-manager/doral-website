@@ -1449,6 +1449,7 @@ __metadata:
     vue: "npm:^3.3.4"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.19"
+    vue3-recaptcha2: "npm:^1.8.0"
     yup: "npm:^1.3.2"
   languageName: unknown
   linkType: soft
@@ -4047,6 +4048,13 @@ __metadata:
   bin:
     vue-tsc: bin/vue-tsc.js
   checksum: 8e3ca396b9d8bce82c868569ff60433d6c02dedf7d694d37a67a35b54835aa02850d7e79fe876d37925de9adadd0bc6ae6ba4bc39ebcf9add705338615504e70
+  languageName: node
+  linkType: hard
+
+"vue3-recaptcha2@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "vue3-recaptcha2@npm:1.8.0"
+  checksum: ff672a3fdbf60712e1c90693abd8290d61e721e3d73354f22ae15b12d32fdf2cffa3d3ffb8f4a30497529f9025aaaadc855f93a195834a7b876f3fb5be0a540e
   languageName: node
   linkType: hard
 
