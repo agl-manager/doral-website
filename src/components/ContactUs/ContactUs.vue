@@ -97,10 +97,10 @@ const siteCaptchaKey = import.meta.env.VITE_G_RECAPTCHA_SITE_KEY
 const vueRecaptcha1 = ref()
 
 const initialState = {
-  to: 'rrubio@doralsolutions.com',
-  subject: 'mail test',
-  body: 'este es el body del correo',
-  accessToken: '8bZ2u$7aFpXvR@3yQ4T!6oL5jN#9iH*0eK1sUgWdM+cY(=-_^%G'
+  to: '',
+  subject: '',
+  body: '',
+  accessToken: ''
 }
 
 const state = reactive({
