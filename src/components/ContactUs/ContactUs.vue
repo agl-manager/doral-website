@@ -56,13 +56,12 @@
                 required
                 :error="submitCount ? errors.body : ''"
               />
-              <section class="col-span-2 flex justify-between pt-4">
+              <section class="col-span-2 gap-4 flex lg:justify-between pt-4 flex-col lg:flex-row lg:items-center">
                 <vue-recaptcha
                   v-show="true"
                   :sitekey="siteCaptchaKey"
                   size="normal"
                   theme="light"
-                  hl="tr"
                   ref="vueRecaptcha1"
                   @verify="recaptchaVerified"
                   @expire="recaptchaExpired"
@@ -124,16 +123,13 @@ const submit = async (payload: any) => {
   // }
   const response = await fetch('https://doralty-mail-service-3z4ybe2vfa-uc.a.run.app/api/email', {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
     headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     redirect: 'follow', // manual, *follow, error
     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload) // body data type must match "Content-Type" header
   })
   return await response.json()
 }
