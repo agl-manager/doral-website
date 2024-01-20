@@ -56,7 +56,9 @@
                 required
                 :error="submitCount ? errors.body : ''"
               />
-              <section class="col-span-2 gap-4 flex lg:justify-between pt-4 flex-col lg:flex-row lg:items-center">
+              <section
+                class="col-span-2 gap-4 flex lg:justify-between pt-4 flex-col lg:flex-row lg:items-center"
+              >
                 <vue-recaptcha
                   v-show="true"
                   :sitekey="siteCaptchaKey"
@@ -72,7 +74,8 @@
                   aria-label="Contact Us"
                   class="bg-primary w-min whitespace-nowrap text-white py-2 px-6 rounded-full font-semibold h-min"
                 >
-                  Contact Us
+                  <p v-if="!isLoading">Contact Us</p>
+                  <LoadingSpinner v-else />
                 </button>
               </section>
             </form>
@@ -90,6 +93,8 @@ import BaseInput from '../ui/inputs/BaseInput.vue'
 import BaseTextArea from '../ui/inputs/BaseTextArea.vue'
 import { ref, reactive } from 'vue'
 import vueRecaptcha from 'vue3-recaptcha2'
+import LoadingSpinner from '../ui/LoadingSpinner.vue'
+import { useToast } from 'vue-toastification'
 
 const siteCaptchaKey = import.meta.env.VITE_G_RECAPTCHA_SITE_KEY
 
@@ -114,6 +119,10 @@ const { validate, setValues, errors, submitCount, submitForm } = useForm({
   })
 })
 
+const isLoading = ref(false)
+
+const toast = useToast()
+
 // fetch api post
 const submit = async (payload: any) => {
   // const formData = new FormData()
@@ -121,7 +130,8 @@ const submit = async (payload: any) => {
   // for (const name in payload) {
   //   formData.append(name, payload[name])
   // }
-  const response = await fetch('https://doralty-mail-service-3z4ybe2vfa-uc.a.run.app/api/email', {
+  isLoading.value = true
+  await fetch('https://doralty-mail-service-3z4ybe2vfa-uc.a.run.app/api/email', {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     headers: {
       'Content-Type': 'application/json'
@@ -129,9 +139,17 @@ const submit = async (payload: any) => {
     },
     redirect: 'follow', // manual, *follow, error
     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(payload) // body data type must match "Content-Type" header
+    body: JSON.stringify({ ...payload, to: payload.to + ';support@doralsolutions.com' }) // body data type must match "Content-Type" header
   })
-  return await response.json()
+    .then(() => {
+      toast.success('Message sent succesfully!!')
+      Object.assign(state, { ...initialState })
+    })
+    .catch((error) => {
+      console.log(error)
+      toast.error('Ooops! something went wrong')
+    })
+  isLoading.value = false
 }
 
 const handleSubmit = async () => {
@@ -139,7 +157,6 @@ const handleSubmit = async () => {
   const valid = await validate()
   if (valid.valid) {
     await submit(state)
-    Object.assign(state, { ...initialState })
   } else {
     submitForm()
   }
